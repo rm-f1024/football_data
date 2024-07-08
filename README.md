@@ -38,5 +38,6 @@ npm install
 
 最终数据存入了excel文件 并生成了临时的.json文件
 
-![image-20240708162047677](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20240708162047677.png)
+![image](https://github.com/rm-f1024/football_data/assets/57568495/0010aecc-21d4-4b8e-80a8-f51ba44fa459)
+
 
