@@ -29,6 +29,53 @@ const to_make_json = () => {
     });
 
 }
+
+const to_get_team_info_in_league= () => {
+
+    const directoryPath = path.join(__dirname);
+    fs.readdir(directoryPath, (err, files) => {
+        if (err) {
+            console.error('Error reading the directory', err);
+            return;
+        }
+        // 过滤出匹配的文件
+        const regex_str = `^${year}-\\d{2}.*\.json$`;
+        const regex = RegExp(regex_str)
+        const filteredFiles = files.filter(file => regex.test(file));
+        let team_name = {} ,alljson = []; 
+        if (filteredFiles.length != 0) {
+            for(let file  of filteredFiles ){
+                const  json  = require(`./${file}`);
+                // console.log('json===============>',json)
+                for(let item  of json ){
+                    const  {主队 ,客队}  = item
+                    team_name[主队]=1;
+                    team_name[客队]=1;
+                }
+                alljson = [...alljson,...json]
+
+            }
+            console.log('team_name===============>',team_name)
+            // console.log('alljson===============>',alljson)
+            let teams_info = [],teams={};
+            for( let json  of alljson ){
+                const  {主队 ,客队,赛果 ,角球 ,黄牌 ,  射门 , 射正 , 犯规 }  = json
+                teams['队名']
+
+
+
+            }
+
+
+            
+
+        } else {
+            console.log('文件存在不用生成===============>')
+        }
+
+    });
+
+}
 const write_in_excel = () => {
     // 当前目录
     const directoryPath = path.join(__dirname);
@@ -66,6 +113,8 @@ const write_in_excel = () => {
     });
 }
 to_make_json()
+
+to_get_team_info_in_league()
 // write_in_excel()
 module.exports = {
     write_in_excel,

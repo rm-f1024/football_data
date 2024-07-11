@@ -15,7 +15,7 @@ const get_table = async ()=>{
             if(res.length != 0 ){
                 const [{日期1:date1}]= res 
                 const date_str   = date1.substring(0,7)
-                console.log('date_str2222222222222===============>',date_str)
+                // console.log('date_str2222222222222===============>',date_str)
                 to_write_json(res,date_str)
                 let end = Date.now()
                 let diff =(  end - start )/1000
