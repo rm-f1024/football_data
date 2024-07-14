@@ -112,11 +112,13 @@ const write_in_excel = () => {
         fs.writeFileSync(`${_date_str}_${filter.toString()}.xlsx`, all_json, 'binary');
     });
 }
-to_make_json()
-
-to_get_team_info_in_league()
+//1,2,3
+// to_make_json()
+// to_get_team_info_in_league()
 // write_in_excel()
 module.exports = {
     write_in_excel,
-    to_make_json
+    to_make_json,
+to_get_team_info_in_league
+
 }

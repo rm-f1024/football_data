@@ -3,6 +3,40 @@ const {get_more_info_by_mactchid,to_write_json} = require("./core.js");
 const {write_in_excel,to_make_json} = require("./write_to_excel.js");
 let { search_month_start,search_month_end    } = require("./basic.json")
 
+
+const fs = require('fs');
+const path = require('path');
+
+// 获取当前目录路径
+const directoryPath = './';
+
+// 读取当前目录中的文件
+fs.readdir(directoryPath, (err, files) => {
+    if (err) {
+        console.error('Error reading directory!', err);
+        return;
+    }
+
+    // 遍历找到匹配的文件并删除
+    files.forEach(file => {
+        // 使用正则表达式匹配 xxxx-xx.json 格式的文件名
+        if (/^\d{4}-\d{2}\.json$/.test(file)) {
+            // 构造文件路径
+            const filePath = path.join(directoryPath, file);
+
+            // 删除文件
+            fs.unlink(filePath, err => {
+                if (err) {
+                    console.error(`Error deleting file ${file}`, err);
+                } else {
+                    console.log(`Deleted file: ${file}`);
+                }
+            });
+        }
+    });
+});
+
+
 const get_table = async ()=>{
     let search_month   =search_month_start
     for (;search_month  <= search_month_end;search_month++){
