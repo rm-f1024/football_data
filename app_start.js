@@ -1,6 +1,6 @@
 const {to_contact_url} = require("./to_get_match_write_json.js");
 const {get_more_info_by_mactchid,to_write_json} = require("./core.js");
-const {write_in_excel,to_make_json} = require("./write_to_excel.js");
+const {write_in_excel,to_make_json,to_get_team_info_in_league} = require("./write_to_excel.js");
 let { search_month_start,search_month_end    } = require("./basic.json")
 
 
@@ -56,6 +56,7 @@ const get_table = async ()=>{
                 console.log(date_str,'共记录场次 ===============>', res.length ,"耗时:",diff,"秒")
             }
             write_in_excel();
+            to_get_team_info_in_league();
          }
         catch(err){
             console.log('get_more_info_by_mactchid_err===============>',err)

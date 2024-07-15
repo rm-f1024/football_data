@@ -42,6 +42,8 @@ const to_get_team_info_in_league= () => {
         const regex_str = `^${year}-\\d{2}.*\.json$`;
         const regex = RegExp(regex_str)
         const filteredFiles = files.filter(file => regex.test(file));
+        const _date_str = filteredFiles[0].substring(0, 4)
+
         let team_name = {} ,alljson = []; 
         if (filteredFiles.length != 0) {
             for(let file  of filteredFiles ){
@@ -57,16 +59,89 @@ const to_get_team_info_in_league= () => {
             }
             console.log('team_name===============>',team_name)
             // console.log('alljson===============>',alljson)
-            let teams_info = [],teams={};
+            let teams_info = [];
+            let map = new Map()
             for( let json  of alljson ){
                 const  {主队 ,客队,赛果 ,角球 ,黄牌 ,  射门 , 射正 , 犯规 }  = json
-                teams['队名']
+                let teams = {} ;
+                let index =  0 ; 
+                let 进球 = 赛果.substr(3)
+                
+                teams['队名'] = 主队
+                teams['进球'] = 0
+                teams['角球'] = 0
+                teams['射门'] = 0
+                teams['射正'] = 0
+                teams['黄牌'] = 0
+                teams['犯规'] = 0
+              {
+                if(赛果){
+                    teams['进球'] = Number(teams['进球'])+ Number(进球.split("-")[index])
+                }
+                if(角球){
+                    teams['角球'] = Number(teams['角球'])+ Number(角球.split("/")[index]) 
+                }
+                if(射门){
+                    teams['射门'] = Number(teams['射门'])+ Number(射门.split("/")[index]) 
+                }
+                if(射正){
+                    teams['射正'] = Number(teams['射正'])+ Number(射正.split("/")[index])
+                }
+                if(黄牌){
+                    teams['黄牌'] = Number(teams['黄牌'])+ Number(黄牌.split("/")[index])
+                }
+                if(犯规){
+                    teams['犯规'] = Number(teams['犯规'])+ Number(犯规.split("/")[index])
+                }
+              }
+              teams_info.push(teams)
+              teams = {} ;
 
+              teams['队名'] = 客队
+              teams['进球'] = 0
+              teams['角球'] = 0
+              teams['射门'] = 0
+              teams['射正'] = 0
+              teams['黄牌'] = 0
+              teams['犯规'] = 0
+              {
+                index =1 ;
+                if(赛果){
+                    teams['进球'] = Number(teams['进球'])+ Number(进球.split("-")[index])
+                }
+                if(角球){
+                    teams['角球'] = Number(teams['角球'])+ Number(角球.split("/")[index]) 
+                }
+                if(射门){
+                    teams['射门'] = Number(teams['射门'])+ Number(射门.split("/")[index]) 
+                }
+                if(射正){
+                    teams['射正'] = Number(teams['射正'])+ Number(射正.split("/")[index])
+                }
+                if(黄牌){
+                    teams['黄牌'] = Number(teams['黄牌'])+ Number(黄牌.split("/")[index])
+                }
+                if(犯规){
+                    teams['犯规'] = Number(teams['犯规'])+ Number(犯规.split("/")[index])
 
+                }
+              }
+              teams_info.push(teams)
+              teams = {} ;
 
             }
 
+            // const uniqueData = Array.from(new Map(teams_info.map(item => [item.队名, item])).values());
+            // console.log('teams_info===============>',teams_info)
 
+
+            // uniqueData.sort((a, b) => b.进球 - a.进球);
+      
+           
+            const all_json = json2xls(teams_info)
+
+
+            fs.writeFileSync(`${_date_str}_${filter.toString()}_数据统计.xlsx`, all_json, 'binary');
             
 
         } else {
