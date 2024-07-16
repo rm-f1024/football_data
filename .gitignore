@@ -6,6 +6,9 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
+#sub
+*/node_modules/
+*/base/
 
 #tmp file 
 [0-9][0-9][0-9][0-9]-[0-9][0-9].json
