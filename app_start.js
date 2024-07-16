@@ -45,7 +45,7 @@ const get_table = async ()=>{
         // console.log('match_table===============>',match_table)
          try{
             const res = await   get_more_info_by_mactchid(match_table)
-            console.log('res===============>',res)
+            // console.log('res===============>',res)
             if(res.length != 0 ){
                 const [{日期1:date1}]= res 
                 const date_str   = date1.substring(0,7)

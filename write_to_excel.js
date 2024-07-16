@@ -48,7 +48,7 @@ const to_get_team_info_in_league = () => {
         if (filteredFiles.length != 0) {
             for (let file of filteredFiles) {
                 const json = require(`./${file}`);
-                console.log('json===============>', json)
+                // console.log('json===============>', json)
                 if (Object.getOwnPropertyNames(json).length !== 0) {
                     for (let item of json) {
                         const { 主队, 客队 } = item
@@ -60,7 +60,7 @@ const to_get_team_info_in_league = () => {
 
 
             }
-            console.log('team_name===============>', team_name)
+            // console.log('team_name===============>', team_name)
             // console.log('alljson===============>',alljson)
             let teams_info = [];
             let map = new Map()

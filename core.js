@@ -68,15 +68,19 @@ const to_get_jiaoqiu_fapai = async (url, id) => {
         const { left, desc, right } = item
         obj[desc] = `${left}/${right}`
 
+          if(desc == "角球"){
+            if(Number(left)+Number(right) > 8.5){
+              obj["角球类型"]="大角"
+            }else{
+              obj["角球类型"]="小角"
+            }
+          }
       }
+      //半场角球
       const { left, desc, right } = other[0]
       obj[desc] = `${left}/${right}`
-      // console.log('left+right ===============>',Number(left)+Number(right))
-      if(Number(left)+Number(right) > 8.5){
-        obj["角球类型"]="大角"
-      }else{
-        obj["角球类型"]="小角"
-      }
+
+   
       timelydate.push(obj);
     } else {
       console.log('数据错误===============>\n')
