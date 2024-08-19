@@ -6,7 +6,7 @@ const { lchown } = require('fs');
 // 截取出文件的标识和客户对齐
 function extractPlaceholders(input) {
     // 定义正则表达式，匹配格式 'xxxx-xxxx-xxx-'
-    const regex = /^(\d{8})-(\d{4})-(.*?)-(.*?)-/;
+    const regex = /^(\d{8})-(\d+)-(.*?)-(.*?)-/;
     const match = input.match(regex);
     if (match) {
         const date = match[1];       // 提取日期字段
@@ -194,6 +194,8 @@ async function processDirectories(basePath) {
             for (const file of excelFiles) {
                 const filePath = path.join(dirPath, file);
                 res_data = await readExcelFile(filePath, client_encode);
+                console.log('filePath===============>',filePath)
+                console.log('client_encode===============>',client_encode)
                 data = [...data, ...res_data]
             }
 
