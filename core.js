@@ -93,7 +93,7 @@ const to_get_jiaoqiu_fapai = async (url, id) => {
     return []
   }
 }
-const to_get_asia = async (url) => {
+const to_get_asia = async (url) => { 
   // console.log('url===============>',url)
   try {
     const response = await fetch(url);

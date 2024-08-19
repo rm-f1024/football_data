@@ -1,0 +1,166 @@
+{
+    "MEM": 42,
+    "UPTIME": 11283,
+    "CPU": 6,
+    "WANMAC": "405EE153FB30",
+    "LANMAC": "405EE153FB31",
+    "OPMODE": "router",
+    "WANIP": "10.6.50.58",
+    "NETMASK": "255.255.254.0",
+    "GATEWAY": "10.6.50.254",
+    "DNS": "10.6.17.31",
+    "WAN_UPTIME": 11268,
+    "PROTO": "dhcp",
+    "IPV6ENABLE": 1,
+    "NETSTATUS": 1,
+    "ifaRate": {
+        "AverRxRate": "0.0000",
+        "AverTxRate": "0.0000",
+        "MaxRxRate": "0.0000",
+        "MaxTxRate": "0.0000"
+    },
+    "if6Rate": {
+        "AverRxRate": "0.0000",
+        "AverTxRate": "0.0000",
+        "MaxRxRate": "0.0000",
+        "MaxTxRate": "0.0000"
+    },
+    "PORTINFO": {
+        "PORT0": {
+            "LINKSTATUS": 3,
+            "MacAddress": "1C20DB8D9676",
+            "UpTime": 11283,
+            "TxBytes_rt": "0.0879",
+            "RxBytes_rt": "0.3691",
+            "TxBytes": 134843742,
+            "RxBytes": 1861248793
+        },
+        "PORT1": {
+            "LINKSTATUS": 0
+        },
+        "PORT2": {
+            "LINKSTATUS": 3,
+            "MacAddress": "CC96E538C799",
+            "IPADDR": "192.168.123.125",
+            "HOSTNAME": "DESKTOP",
+            "UpTime": 11204,
+            "TxBytes_rt": "0.0125",
+            "RxBytes_rt": "0.0328",
+            "TxBytes": 37057932,
+            "RxBytes": 44121571,
+            "TxPkts": 91078,
+            "RxPkts": 103045,
+            "ifaRate": {
+                "AverRxRate": "0.0000",
+                "AverTxRate": "0.0000",
+                "MaxRxRate": "0.0000",
+                "MaxTxRate": "0.0000"
+            },
+            "if6Rate": {
+                "AverRxRate": "0.0000",
+                "AverTxRate": "0.0000",
+                "MaxRxRate": "0.0000",
+                "MaxTxRate": "0.0000"
+            }
+        }
+    },
+    "2G": {
+        "ra0": {
+            "SSID": "clife-FB30",
+            "NUMBER": 1,
+            "stainfo": [
+                {
+                    "UpTime": 1228,
+                    "RSSI": -39,
+                    "TxDataRate": 137,
+                    "RxDataRate": 6,
+                    "TxBytes_rt": "1.2929",
+                    "RxBytes_rt": "0.1301",
+                    "TxBytes": 46270865,
+                    "RxBytes": 1907479,
+                    "TxPkts": 46344,
+                    "RxPkts": 14096,
+                    "MacAddress": "C2DEFCD84D00",
+                    "IPADDR": "192.168.123.157",
+                    "HOSTNAME": "magic5",
+                    "ifaRate": {
+                        "AverRxRate": "0.0000",
+                        "AverTxRate": "0.0000",
+                        "MaxRxRate": "0.0000",
+                        "MaxTxRate": "0.0000"
+                    },
+                    "if6Rate": {
+                        "AverRxRate": "0.0000",
+                        "AverTxRate": "0.0000",
+                        "MaxRxRate": "0.0000",
+                        "MaxTxRate": "0.0000"
+                    }
+                }
+            ]
+        },
+        "NUMBER": 1
+    },
+    "5G": {
+        "rax0": {
+            "SSID": "clife-FB30-5G",
+            "NUMBER": 2,
+            "stainfo": [
+                {
+                    "UpTime": 3280,
+                    "RSSI": -55,
+                    "TxDataRate": 2161,
+                    "RxDataRate": 2401,
+                    "TxBytes_rt": "0.0812",
+                    "RxBytes_rt": "0.0044",
+                    "TxBytes": 2666034518,
+                    "RxBytes": 48550040,
+                    "TxPkts": 2189547,
+                    "RxPkts": 235423,
+                    "MacAddress": "58CE2A8884A7",
+                    "IPADDR": "192.168.123.165",
+                    "HOSTNAME": "58CE2A8884A7",
+                    "ifaRate": {
+                        "AverRxRate": "0.0000",
+                        "AverTxRate": "0.0000",
+                        "MaxRxRate": "0.0000",
+                        "MaxTxRate": "0.0000"
+                    },
+                    "if6Rate": {
+                        "AverRxRate": "0.0000",
+                        "AverTxRate": "0.0000",
+                        "MaxRxRate": "0.0000",
+                        "MaxTxRate": "0.0000"
+                    }
+                },
+                {
+                    "UpTime": 160,
+                    "RSSI": -42,
+                    "TxDataRate": 2161,
+                    "RxDataRate": 6,
+                    "TxBytes_rt": "0.0000",
+                    "RxBytes_rt": "0.0000",
+                    "TxBytes": 10533144,
+                    "RxBytes": 770206,
+                    "TxPkts": 12624,
+                    "RxPkts": 5091,
+                    "MacAddress": "A2637D075D2F",
+                    "IPADDR": "192.168.123.100",
+                    "HOSTNAME": "FOA-AL00",
+                    "ifaRate": {
+                        "AverRxRate": "0.0000",
+                        "AverTxRate": "0.0000",
+                        "MaxRxRate": "0.0000",
+                        "MaxTxRate": "0.0000"
+                    },
+                    "if6Rate": {
+                        "AverRxRate": "0.0000",
+                        "AverTxRate": "0.0000",
+                        "MaxRxRate": "0.0000",
+                        "MaxTxRate": "0.0000"
+                    }
+                }
+            ]
+        },
+        "NUMBER": 2
+    }
+}

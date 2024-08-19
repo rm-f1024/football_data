@@ -1,9 +1,9 @@
 {
     "year":2024,
     "search_month_start":5,
-    "search_month_end":5,
-    "start_day":17,
-    "end_day":17,
+    "search_month_end":7,
+    "start_day":1,
+    "end_day":28,
     "filter": ["足协杯"],
     "option":   3
   
